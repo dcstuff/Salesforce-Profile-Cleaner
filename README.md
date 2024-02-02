@@ -1,6 +1,6 @@
 # Salesforce Profile Cleaner
 
-Cleans a Salesforce profile of all elements for which it has no access, so they're just takin' up space, and mucking up deployments, especially in the case of a partial org migration where your org won't have all the referenced metadata.
+Cleans a Salesforce profile (or profiles) of all elements for which it has no access, so they're just takin' up space, and mucking up deployments, especially in the case of a partial org migration where your org won't have all the referenced metadata.
 
 ## Note Uno
 Retrieving a Salesforce profile only brings with it references to the metadata that was retrieved at the same time. It's dumb and annoying (though sometimes, handy). The *Salesforce Profile Cleaner* will remove irrelevant elements that are in your current local version of the file. The original file will **not** be altered; a copy will be made with the same name, appended by `__CLEANED`.
@@ -14,6 +14,7 @@ The *Salesforce Profile Cleaner* won't take a hammer to your profile and delete 
 
 ## Usage
 `python profile_cleaner.py [path_to_profile]`
+`python profile_cleaner.py [path_to_profiles_folder]`
 
 **Returns** `[path_to_profile]__CLEANED`
 
